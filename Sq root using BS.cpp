@@ -29,3 +29,17 @@ long r = x;
     while (r*r > x)
         r = (r + x/r) / 2;
     return r;
+
+
+// With precision factor
+double factor=1;
+        int precision=6;
+        double ans=r;
+        for(int i=0;i<precision;i++){
+            factor/=10;
+            
+            for(double j=ans; j*j<x; j=j+factor){
+                ans=j;
+            }
+        }
+        cout<<ans;
